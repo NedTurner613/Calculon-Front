@@ -1,0 +1,35 @@
+
+<div>
+    <!-- VARIABLE A -->
+    <input class="variable" [(ngModel)]="equationValues.a" contenteditable/>
+    <!-- VARIABLE X -->
+
+
+    <!-- OPERATOR BUTTON -->
+    <label class="dropdown">
+        <button class="dropbtn">{{equationValues.operator}}</button>
+        <div class="dropdown-content">
+            <button (click)="operatorSelect('+')">+</button>
+            <button (click)="operatorSelect('-')">-</button>
+            <button (click)="operatorSelect('*')">*</button>
+            <button (click)="operatorSelect('/')">/</button>
+        </div>
+    </label>
+
+
+    <!-- VARIABLE B -->
+    <input class="variable" [(ngModel)]="equationValues.b"/>
+    <!-- VARIABLE X -->
+
+     = 
+
+    <!-- VARIABLE Y -->
+    <label *ngIf="equationValues.y==undefined; else elseBlock">y</label>
+      <ng-template #elseBlock>{{equationValues.y}}</ng-template>
+
+</div>
+<button type="button" (click)="process()">calculate</button>
+    
+
+
+
